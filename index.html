@@ -6,6 +6,87 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Content goes here -->
+  <header class="site-header">
+    <h2>PetQuest</h2>
+  </header>
+  <section class="cta-banner">
+    <h1>Open Your Heart: Foster a Rescue Pet Today!</h1>
+    <p>Fostering gives animals a second chance and helps them find loving forever homes. Your kindness can change a life.</p>
+    <a href="#" class="cta-button">Become a Foster</a>
+  </section>
+  <section class="info-section">
+    <img src="img/pet.jpg" alt="Happy foster pet" class="info-image">
+    <div class="info-text">
+      <h3>Why Foster a Pet?</h3>
+      <p>
+        Fostering pets helps save lives by providing a safe and loving environment until they find their forever homes.
+        It also frees up space in shelters for more animals in need. Anyone can make a difference—start your fostering journey today!
+      </p>
+    </div>
+  </section>
+  <section class="signup-section" id="signup-section">
+    <h3>Foster Application</h3>
+    <form id="fosterForm">
+      <label for="name">Full Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="address">Address:</label><br>
+      <input type="text" id="address" name="address" required><br><br>
+
+      <label for="age">Age:</label><br>
+      <input type="number" id="age" name="age" min="18" required><br><br>
+
+      <label for="occupation">Occupation:</label><br>
+      <input type="text" id="occupation" name="occupation" required><br><br>
+
+      <label for="hasPets">Do you have any pets?</label><br>
+      <select id="hasPets" name="hasPets" required>
+        <option value="">Select</option>
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+      </select><br><br>
+
+      <div id="petCountContainer" style="display:none;">
+        <label for="petCount">How many pets do you have?</label><br>
+        <input type="number" id="petCount" name="petCount" min="1"><br><br>
+      </div>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+  <div id="successMessage" class="success-message" style="display:none;">
+    <p>Your application was successfully submitted!</p>
+  </div>
+  <script>
+    // Show/hide pet count input based on selection
+    document.getElementById('hasPets').addEventListener('change', function() {
+      var petCountContainer = document.getElementById('petCountContainer');
+      if (this.value === 'yes') {
+        petCountContainer.style.display = 'block';
+        document.getElementById('petCount').setAttribute('required', 'required');
+      } else {
+        petCountContainer.style.display = 'none';
+        document.getElementById('petCount').removeAttribute('required');
+      }
+    });
+
+    // Handle form submission
+    document.getElementById('fosterForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var form = event.target;
+      // Simple check for required fields
+      if (
+        form.name.value &&
+        form.address.value &&
+        form.age.value &&
+        form.occupation.value &&
+        form.hasPets.value &&
+        (form.hasPets.value === 'no' || (form.hasPets.value === 'yes' && form.petCount.value))
+      ) {
+        document.getElementById('signup-section').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>

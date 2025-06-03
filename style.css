@@ -1,0 +1,196 @@
+/* Use a modern, easy-to-read font */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e6f7fa; /* light teal background for the page */
+}
+
+/* Style the CTA banner section */
+.cta-banner {
+  background-color: #1e88a8; /* fallback deep blue-teal for banner */
+  color: #ffffff; /* white text for contrast */
+  text-align: center;
+  padding: 120px 20px 80px 20px; /* taller banner, less space above heading */
+  /* Add background image and overlay */
+  background-image:
+    linear-gradient(rgba(30, 136, 168, 0.7), rgba(30, 136, 168, 0.7)),
+    url('img/cta-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Large, bold heading */
+.cta-banner h1 {
+  font-size: 2.5em;
+  margin-bottom: 32px; /* increased space below heading */
+  margin-top: 0; /* remove extra space above heading */
+}
+
+/* Short description styling */
+.cta-banner p {
+  font-size: 1.2em;
+  margin-bottom: 36px; /* increased space below description */
+  margin-top: 0;
+}
+
+/* Eye-catching CTA button */
+.cta-button {
+  display: inline-block;
+  background-color: #2ed8c3; /* bright teal for button */
+  color: #1e88a8; /* blue text for contrast */
+  padding: 16px 36px;
+  font-size: 1.1em;
+  text-decoration: none;
+  border-radius: 6px; /* slightly rounded corners */
+  font-weight: bold;
+  /* Make the button stand out */
+  box-shadow: 0 2px 8px rgba(30, 136, 168, 0.15);
+  transition: background-color 0.2s;
+}
+
+/* Button hover effect */
+.cta-button:hover {
+  background-color: #26b6b0; /* slightly darker teal on hover */
+  color: #ffffff;
+}
+
+/* Simple site header styling */
+.site-header {
+  background-color: #169e8f; /* darker teal for better contrast */
+  color: #1e88a8; /* blue text for contrast */
+  text-align: center;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.site-header h2 {
+  margin: 0;
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff; /* white for strong contrast and brightness */
+}
+
+/* Info section below the banner */
+.info-section {
+  max-width: 1000px; /* make section larger */
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  display: table;
+  width: 100%;
+}
+
+/* Image column */
+.info-image {
+  display: table-cell;
+  width: 55%;
+  max-width: 420px; /* make image larger */
+  vertical-align: middle;
+  border-radius: 20px; /* more rounded corners */
+  margin-right: 28px;
+  height: auto;
+}
+
+/* Text column */
+.info-text {
+  display: table-cell;
+  width: 45%;
+  vertical-align: middle;
+  padding-left: 32px;
+  color: #1e88a8;
+  font-size: 1.15em;
+}
+
+.info-text h3 {
+  margin-top: 0;
+  color: #169e8f;
+}
+
+/* Signup section styles */
+.signup-section {
+  max-width: 500px;
+  margin: 40px auto 0 auto;
+  background-color: #f0fbfd;
+  border-radius: 10px;
+  padding: 30px 20px;
+  box-shadow: 0 2px 8px rgba(30, 136, 168, 0.08);
+  color: #1e88a8;
+}
+
+.signup-section h3 {
+  margin-top: 0;
+  color: #169e8f;
+}
+
+.signup-section label {
+  font-weight: bold;
+}
+
+.signup-section input,
+.signup-section select {
+  width: 95%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #b2dfdb;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.signup-section button {
+  background-color: #2ed8c3;
+  color: #1e88a8;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.signup-section button:hover {
+  background-color: #26b6b0;
+  color: #ffffff;
+}
+
+/* Success message styles */
+.success-message {
+  max-width: 500px;
+  margin: 40px auto;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  padding: 30px 20px;
+  text-align: center;
+  color: #169e8f;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Responsive: stack columns on small screens */
+@media (max-width: 700px) {
+  .info-section {
+    display: block;
+    text-align: center;
+    padding: 20px;
+  }
+  .info-image,
+  .info-text {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto 20px auto;
+  }
+  .info-image {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+  .info-text {
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+}
