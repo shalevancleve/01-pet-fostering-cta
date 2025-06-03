@@ -12,9 +12,9 @@
   <section class="cta-banner">
     <h1>Open Your Heart: Foster a Rescue Pet Today!</h1>
     <p>Fostering gives animals a second chance and helps them find loving forever homes. Your kindness can change a life.</p>
-    <a href="#" class="cta-button">Become a Foster</a>
+    <a href="#info-section" class="cta-button" id="learnMoreBtn">Learn More About Fostering</a>
   </section>
-  <section class="info-section">
+  <section class="info-section" id="info-section">
     <img src="img/pet.jpg" alt="Happy foster pet" class="info-image">
     <div class="info-text">
       <h3>Why Foster a Pet?</h3>
@@ -86,6 +86,13 @@
         document.getElementById('signup-section').style.display = 'none';
         document.getElementById('successMessage').style.display = 'block';
       }
+    });
+
+    // Smooth scroll to info section when Learn More button is clicked
+    document.getElementById('learnMoreBtn').addEventListener('click', function(event) {
+      event.preventDefault();
+      var infoSection = document.getElementById('info-section');
+      infoSection.scrollIntoView({ behavior: 'smooth' });
     });
   </script>
 </body>
